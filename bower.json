@@ -1,0 +1,23 @@
+{
+  "name": "kiwappVideo.js",
+  "main": "./kiwappVideo.js",
+  "version": "1.4.0",
+  "homepage": "kiwapp.github.io/kiwappVideo.js",
+  "authors": [
+    "Aurelien Garroux aurelien@procheo.fr",
+    "Adrien Carta adrien@procheo.fr"
+  ],
+  "description": "Enhance your app with native video playing.",
+  "keywords": [
+    "Kiwapp",
+    "video"
+  ],
+  "license": "GPL v2",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}
