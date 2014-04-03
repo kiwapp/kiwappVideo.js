@@ -1,0 +1,503 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>index.js</title>
+  <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+  <link rel="stylesheet" media="all" href="doc-style.css" />
+  <script src="doc-filelist.js"></script>
+  <script>
+    var relativeDir = "", thisFile = "Users/adriencarta/KiwappLib/doc/kiwappVideo/src/index.js", defaultSidebar = true;
+  </script>
+  <script src="doc-script.js"></script>
+  <script src="fileSearch.js"></script>
+  <script src="goToLine.js"></script>
+  <link rel="stylesheet" href="fileSearch.css" />
+  <link rel="stylesheet" href="goToLine.css" />
+</head>
+<body>
+  <div id="sidebar_wrapper">
+    <div id="sidebar_switch">
+      <span class="tree">Files</span>
+      <span class="headings">Headings</span>
+    </div>
+    <div id="tree"></div>
+    <div id="headings">
+      <div class="heading h1">
+        <a href="#how%20to%20use%20kiwappvideo.js">How To Use kiwappVideo.js</a>
+      </div>
+      <div class="heading h2">
+        <a href="#initialize%20player">Initialize Player</a>
+      </div>
+      <div class="heading h2">
+        <a href="#player%20methods">Player Methods</a>
+      </div>
+      <div class="heading h3">
+        <a href="#play%20a%20video">Play a video</a>
+      </div>
+      <div class="heading h3">
+        <a href="#pause%20a%20video">Pause a video</a>
+      </div>
+      <div class="heading h3">
+        <a href="#resume%20a%20video">Resume a video</a>
+      </div>
+      <div class="heading h3">
+        <a href="#stop%20a%20video">Stop a video</a>
+      </div>
+      <div class="heading h3">
+        <a href="#change%20sound%20volume">Change sound volume</a>
+      </div>
+      <div class="heading h3">
+        <a href="#know%20when%20a%20video%20is%20finished">Know when a video is finished</a>
+      </div>
+    </div>
+  </div>
+  <div id="sidebar-toggle"></div>
+  <div id="container"><div class="background highlight"></div>
+<table cellpadding="0" cellspacing="0">
+  <tbody>
+      <tr>
+        <td class="docs">
+<div class="pilwrap" id="how%20to%20use%20kiwappvideo.js">
+  <h1>
+    <a href="#how%20to%20use%20kiwappvideo.js" name="how%20to%20use%20kiwappvideo.js" class="pilcrow">&#182;</a>
+    How To Use kiwappVideo.js
+  </h1>
+</div>
+
+
+<p>kiwappVideo.js is a kiwapp.js based labrary which provides you simple methods to
+play video using native on Android and iOS.</p>
+
+<p>It can not work without Kiwapp.js loaded in your application.
+You have to initialize kiwapp before using the kiwappVideo methods.</p>
+
+<div class="dox">
+  <div class="summary">
+<div class="pilwrap" id="initialize%20player">
+  <h2>
+    <a href="#initialize%20player" name="initialize%20player" class="pilcrow">&#182;</a>
+    Initialize Player
+  </h2>
+</div>
+
+
+<p>Once Kiwapp is initialized, you can create a Player bridge.
+The player needs a configuration to work. <br />
+The library include a default configuration to lazy launch the player. <br />
+But if you want more customization, you have to pass it a config object at the initialization.</p>
+  </div>
+  <div class="body">
+  </div>
+</div>
+        </td>
+        <td class="code highlight"><div class="highlight"><pre></pre></div>
+        </td>
+      </tr>
+      <tr>
+        <td class="docs">
+<div class="pilwrap">
+  <a class="pilcrow" href="#section-2" id="section-2">&#182;</a>
+</div>
+<p>Creating the configuration.
+Here the player will mask all the webview surface.</p>
+        </td>
+        <td class="code highlight"><div class="highlight"><pre>
+<span class="kd">var</span> <span class="nx">config</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="nx">origin_x</span> <span class="o">:</span> <span class="mi">0</span><span class="p">,</span>
+    <span class="nx">origin_y</span> <span class="o">:</span> <span class="mi">0</span><span class="p">,</span>
+    <span class="nx">width</span>    <span class="o">:</span> <span class="nb">window</span><span class="p">.</span><span class="nx">innerWidth</span><span class="p">,</span>
+    <span class="nx">height</span>   <span class="o">:</span> <span class="nb">window</span><span class="p">.</span><span class="nx">innerHeight</span>
+<span class="p">};</span>
+
+<span class="kd">var</span> <span class="nx">player</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">KWPlayer</span><span class="p">(</span><span class="nx">config</span><span class="p">);</span>
+
+
+</pre></div>
+        </td>
+      </tr>
+      <tr>
+        <td class="docs"><div class="dox">
+  <div class="summary">
+<div class="pilwrap" id="player%20methods">
+  <h2>
+    <a href="#player%20methods" name="player%20methods" class="pilcrow">&#182;</a>
+    Player Methods
+  </h2>
+</div>
+
+
+<p>All the player methods are bridges calling native. <br />
+Then these are all asynchronous. <br />
+To trigger callbacks when the calls are made, the Player trigger events you can listen.</p>
+  </div>
+  <div class="body">
+  </div>
+</div>
+        </td>
+        <td class="code highlight"><div class="highlight"><pre>
+
+
+</pre></div>
+        </td>
+      </tr>
+      <tr>
+        <td class="docs"><div class="dox">
+  <div class="summary">
+<div class="pilwrap" id="play%20a%20video">
+  <h3>
+    <a href="#play%20a%20video" name="play%20a%20video" class="pilcrow">&#182;</a>
+    Play a video
+  </h3>
+</div>
+
+
+<p>Once your player is ready, you can play videos. <br />
+BE CARREFULL, YOU'LL NOT SEE YOUR VIDEO IF YOUR HTML BODY ISN'T TRANSPARENT.</p>
+  </div>
+  <div class="body">
+  </div>
+</div>
+        </td>
+        <td class="code highlight"><div class="highlight"><pre>
+
+
+</pre></div>
+        </td>
+      </tr>
+      <tr>
+        <td class="docs">
+<div class="pilwrap">
+  <a class="pilcrow" href="#section-5" id="section-5">&#182;</a>
+</div>
+<p>The method "play" of your player takes three arguments.</p>
+        </td>
+        <td class="code highlight"><div class="highlight"><pre>
+
+
+</pre></div>
+        </td>
+      </tr>
+      <tr>
+        <td class="docs">
+<div class="pilwrap">
+  <a class="pilcrow" href="#section-6" id="section-6">&#182;</a>
+</div>
+<p>The relative path to the video :</p>
+        </td>
+        <td class="code highlight"><div class="highlight"><pre>
+<span class="kd">var</span> <span class="nx">path</span> <span class="o">=</span> <span class="s1">&#39;assets/myVideo.mp4&#39;</span><span class="p">;</span>
+
+
+</pre></div>
+        </td>
+      </tr>
+      <tr>
+        <td class="docs">
+<div class="pilwrap">
+  <a class="pilcrow" href="#section-7" id="section-7">&#182;</a>
+</div>
+<p>[Optionnal - Default : 0] The start time of the video :</p>
+        </td>
+        <td class="code highlight"><div class="highlight"><pre>
+<span class="kd">var</span> <span class="nx">startTime</span> <span class="o">=</span> <span class="mi">10</span><span class="p">;</span>
+
+
+</pre></div>
+        </td>
+      </tr>
+      <tr>
+        <td class="docs">
+<div class="pilwrap">
+  <a class="pilcrow" href="#section-8" id="section-8">&#182;</a>
+</div>
+<p>[Optionnal - Default : 1] The times the video will play again :</p>
+        </td>
+        <td class="code highlight"><div class="highlight"><pre>
+<span class="kd">var</span> <span class="nx">nbOfPlay</span> <span class="o">=</span> <span class="mi">2</span><span class="p">;</span>
+
+
+</pre></div>
+        </td>
+      </tr>
+      <tr>
+        <td class="docs">
+<div class="pilwrap">
+  <a class="pilcrow" href="#section-9" id="section-9">&#182;</a>
+</div>
+<p>Listening the play action :</p>
+        </td>
+        <td class="code highlight"><div class="highlight"><pre>
+<span class="nx">player</span><span class="p">.</span><span class="nx">on</span><span class="p">(</span><span class="s1">&#39;KWPlayer:play&#39;</span><span class="p">,</span> <span class="kd">function</span><span class="p">(){</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;The video is playing.&quot;</span><span class="p">);</span>
+<span class="p">});</span>
+
+
+</pre></div>
+        </td>
+      </tr>
+      <tr>
+        <td class="docs">
+<div class="pilwrap">
+  <a class="pilcrow" href="#section-10" id="section-10">&#182;</a>
+</div>
+<p>Playing the video :</p>
+        </td>
+        <td class="code highlight"><div class="highlight"><pre>
+<span class="nx">player</span><span class="p">.</span><span class="nx">play</span><span class="p">(</span><span class="nx">path</span><span class="p">,</span> <span class="nx">startTime</span><span class="p">,</span> <span class="nx">nbOfPlay</span><span class="p">);</span>
+
+
+</pre></div>
+        </td>
+      </tr>
+      <tr>
+        <td class="docs"><div class="dox">
+  <div class="summary">
+<div class="pilwrap" id="pause%20a%20video">
+  <h3>
+    <a href="#pause%20a%20video" name="pause%20a%20video" class="pilcrow">&#182;</a>
+    Pause a video
+  </h3>
+</div>
+
+
+<p>If a video is playing, you can pause it.</p>
+  </div>
+  <div class="body">
+  </div>
+</div>
+        </td>
+        <td class="code highlight"><div class="highlight"><pre>
+
+
+</pre></div>
+        </td>
+      </tr>
+      <tr>
+        <td class="docs">
+<div class="pilwrap">
+  <a class="pilcrow" href="#section-12" id="section-12">&#182;</a>
+</div>
+<p>Listening the pause action :</p>
+        </td>
+        <td class="code highlight"><div class="highlight"><pre>
+<span class="nx">player</span><span class="p">.</span><span class="nx">on</span><span class="p">(</span><span class="s1">&#39;KWPlayer:pause&#39;</span><span class="p">,</span> <span class="kd">function</span><span class="p">(){</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;The video is pausing.&quot;</span><span class="p">);</span>
+<span class="p">});</span>
+
+
+</pre></div>
+        </td>
+      </tr>
+      <tr>
+        <td class="docs">
+<div class="pilwrap">
+  <a class="pilcrow" href="#section-13" id="section-13">&#182;</a>
+</div>
+<p>Pausing the current video :</p>
+        </td>
+        <td class="code highlight"><div class="highlight"><pre>
+<span class="nx">player</span><span class="p">.</span><span class="nx">pause</span><span class="p">();</span>
+
+
+</pre></div>
+        </td>
+      </tr>
+      <tr>
+        <td class="docs"><div class="dox">
+  <div class="summary">
+<div class="pilwrap" id="resume%20a%20video">
+  <h3>
+    <a href="#resume%20a%20video" name="resume%20a%20video" class="pilcrow">&#182;</a>
+    Resume a video
+  </h3>
+</div>
+
+
+<p>If a video is in pause mode, you can resume it.</p>
+  </div>
+  <div class="body">
+  </div>
+</div>
+        </td>
+        <td class="code highlight"><div class="highlight"><pre>
+
+
+</pre></div>
+        </td>
+      </tr>
+      <tr>
+        <td class="docs">
+<div class="pilwrap">
+  <a class="pilcrow" href="#section-15" id="section-15">&#182;</a>
+</div>
+<p>Listening the resume action :</p>
+        </td>
+        <td class="code highlight"><div class="highlight"><pre>
+<span class="nx">player</span><span class="p">.</span><span class="nx">on</span><span class="p">(</span><span class="s1">&#39;KWPlayer:resume&#39;</span><span class="p">,</span> <span class="kd">function</span><span class="p">(){</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;The video is resuming.&quot;</span><span class="p">);</span>
+<span class="p">});</span>
+
+
+</pre></div>
+        </td>
+      </tr>
+      <tr>
+        <td class="docs">
+<div class="pilwrap">
+  <a class="pilcrow" href="#section-16" id="section-16">&#182;</a>
+</div>
+<p>Resuming the current video</p>
+        </td>
+        <td class="code highlight"><div class="highlight"><pre>
+<span class="nx">player</span><span class="p">.</span><span class="nx">resume</span><span class="p">();</span>
+
+
+</pre></div>
+        </td>
+      </tr>
+      <tr>
+        <td class="docs"><div class="dox">
+  <div class="summary">
+<div class="pilwrap" id="stop%20a%20video">
+  <h3>
+    <a href="#stop%20a%20video" name="stop%20a%20video" class="pilcrow">&#182;</a>
+    Stop a video
+  </h3>
+</div>
+
+
+<p>if a video is playing, you can stop it.</p>
+  </div>
+  <div class="body">
+  </div>
+</div>
+        </td>
+        <td class="code highlight"><div class="highlight"><pre>
+
+
+</pre></div>
+        </td>
+      </tr>
+      <tr>
+        <td class="docs">
+<div class="pilwrap">
+  <a class="pilcrow" href="#section-18" id="section-18">&#182;</a>
+</div>
+<p>Listening the stop action :</p>
+        </td>
+        <td class="code highlight"><div class="highlight"><pre>
+<span class="nx">player</span><span class="p">.</span><span class="nx">on</span><span class="p">(</span><span class="s1">&#39;KWPlayer:stop&#39;</span><span class="p">,</span> <span class="kd">function</span><span class="p">(){</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;The video is stopping.&quot;</span><span class="p">);</span>
+<span class="p">});</span>
+
+
+</pre></div>
+        </td>
+      </tr>
+      <tr>
+        <td class="docs">
+<div class="pilwrap">
+  <a class="pilcrow" href="#section-19" id="section-19">&#182;</a>
+</div>
+<p>Stopping the current video</p>
+        </td>
+        <td class="code highlight"><div class="highlight"><pre>
+<span class="nx">player</span><span class="p">.</span><span class="nx">stop</span><span class="p">();</span>
+
+
+</pre></div>
+        </td>
+      </tr>
+      <tr>
+        <td class="docs"><div class="dox">
+  <div class="summary">
+<div class="pilwrap" id="change%20sound%20volume">
+  <h3>
+    <a href="#change%20sound%20volume" name="change%20sound%20volume" class="pilcrow">&#182;</a>
+    Change sound volume
+  </h3>
+</div>
+
+
+<p>You can dynamically chnge the sound volume.</p>
+  </div>
+  <div class="body">
+  </div>
+</div>
+        </td>
+        <td class="code highlight"><div class="highlight"><pre>
+
+
+</pre></div>
+        </td>
+      </tr>
+      <tr>
+        <td class="docs">
+<div class="pilwrap">
+  <a class="pilcrow" href="#section-21" id="section-21">&#182;</a>
+</div>
+<p>The value has to be betwenn 0 and 100 :</p>
+        </td>
+        <td class="code highlight"><div class="highlight"><pre>
+<span class="kd">var</span> <span class="nx">soundVolume</span> <span class="o">=</span> <span class="mi">50</span><span class="p">;</span>
+
+
+</pre></div>
+        </td>
+      </tr>
+      <tr>
+        <td class="docs">
+<div class="pilwrap">
+  <a class="pilcrow" href="#section-22" id="section-22">&#182;</a>
+</div>
+<p>Changing sound volume :</p>
+        </td>
+        <td class="code highlight"><div class="highlight"><pre>
+<span class="nx">player</span><span class="p">.</span><span class="nx">sound</span><span class="p">(</span><span class="nx">soundVolume</span><span class="p">);</span>
+
+
+</pre></div>
+        </td>
+      </tr>
+      <tr>
+        <td class="docs"><div class="dox">
+  <div class="summary">
+<div class="pilwrap" id="know%20when%20a%20video%20is%20finished">
+  <h3>
+    <a href="#know%20when%20a%20video%20is%20finished" name="know%20when%20a%20video%20is%20finished" class="pilcrow">&#182;</a>
+    Know when a video is finished
+  </h3>
+</div>
+
+
+<p>You can listen the video player to know when a video is finished and have a callback.</p>
+  </div>
+  <div class="body">
+  </div>
+</div>
+        </td>
+        <td class="code highlight"><div class="highlight"><pre>
+
+
+</pre></div>
+        </td>
+      </tr>
+      <tr>
+        <td class="docs">
+<div class="pilwrap">
+  <a class="pilcrow" href="#section-24" id="section-24">&#182;</a>
+</div>
+<p>Listening the end of the video :</p>
+        </td>
+        <td class="code highlight"><div class="highlight"><pre>
+<span class="nx">player</span><span class="p">.</span><span class="nx">on</span><span class="p">(</span><span class="s1">&#39;KWPlayer:finish&#39;</span><span class="p">,</span> <span class="kd">function</span><span class="p">(</span><span class="nx">path</span><span class="p">){</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;The video &quot;</span><span class="o">+</span><span class="nx">path</span><span class="o">+</span><span class="s2">&quot; is finished.&quot;</span><span class="p">);</span>
+<span class="p">});</span>
+</pre></div>
+        </td>
+      </tr>
+  </tbody>
+</table>
+  </div>
+</body>
+</html>
